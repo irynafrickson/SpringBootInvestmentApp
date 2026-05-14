@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: investment-portfolio-service
+  datasource:
+    url: jdbc:h2:mem:assetsdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    defer-datasource-initialization: true # REQUIRED for data.sql to work
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
