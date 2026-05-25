@@ -2,6 +2,7 @@ package com.example.investment_portfolio_service.assets;
 
 import com.example.investment_portfolio_service.assets.dto.AssetDto;
 import com.example.investment_portfolio_service.assets.dto.AssetCreateRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,12 +26,12 @@ public class AssetController {
     }
 
     @PostMapping
-    public AssetDto create(@RequestBody AssetCreateRequest req) {
+    public AssetDto create(@Valid @RequestBody AssetCreateRequest req) {
         return assetService.create(req);
     }
 
     @PutMapping("/{id}")
-    public AssetDto update(@PathVariable Long id, @RequestBody AssetCreateRequest req) {
+    public AssetDto update(@PathVariable Long id, @Valid @RequestBody AssetCreateRequest req) {
         return assetService.update(id, req);
     }
 
